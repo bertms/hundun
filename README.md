@@ -1,76 +1,33 @@
-# js-md5
-[![Build Status](https://travis-ci.org/emn178/js-md5.svg?branch=master)](https://travis-ci.org/emn178/js-md5)
-[![Coverage Status](https://coveralls.io/repos/emn178/js-md5/badge.svg?branch=master)](https://coveralls.io/r/emn178/js-md5?branch=master)  
-[![NPM](https://nodei.co/npm/js-md5.png?stars&downloads)](https://nodei.co/npm/js-md5/)
+<!--
+ * @Author: whyour
+ * @Github: https://github.com/whyour
+ * @Date: 2020-11-30 17:54:38
+ * @LastEditors: whyour
+ * @LastEditTime: 2021-03-24 22:51:27
+ * @FilePath: /hundun/Readme.md
+-->
+## 混沌
 
-A simple MD5 hash function for JavaScript supports UTF-8 encoding.
+1. 中国古代和古希腊都有混沌的神，古希腊神话中的神为[卡俄斯](https://zh.wikipedia.org/wiki/%E5%8D%A1%E4%BF%84%E6%96%AF)，中国《[庄子](https://zh.wikipedia.org/wiki/%E5%BA%84%E5%AD%90_(%E4%B9%A6))》中记载了[浑沌](https://zh.wikipedia.org/wiki/%E6%B7%B7%E6%B2%8C_(%E7%A5%9E%E8%A9%B1%E7%94%9F%E7%89%A9))的故事。
+2. **混沌**，又写作**浑沌**，指混乱而没有秩序的状态。在哲学中，混沌指虚空，或者没有结构的均匀状态。
+3. 在非线性科学中，“混沌”这个词的含义和本意相似但又不完全一致，非线性科学中的**混沌现象**指的是一种确定的但不可预测的运动状态。它的外在表现和纯粹的随机运动很相似，即都不可预测。但和随机运动不同的是，混沌运动在动力学上是确定的，它的不可预测性是来源于运动的不稳定性。或者说混沌系统对无限小的初值变动和微扰也具有敏感性，无论多小的扰动在长时间以后，也会使系统彻底偏离原来的演化方向。混沌现象是自然界中的普遍现象，天气变化就是一个典型的混沌运动。混沌现象的一个著名表述就是[蝴蝶效应](https://zh.wikipedia.org/wiki/%E8%9D%B4%E8%9D%B6%E6%95%88%E5%BA%94)：南美洲一只蝴蝶扇一扇翅膀，就可能会在佛罗里达引起一场飓风。
 
-## Demo
-[MD5 Online](http://emn178.github.io/online-tools/md5.html)  
-[MD5 File Checksum Online](http://emn178.github.io/online-tools/md5_checksum.html)
+## 免责声明
 
-## Download
-[Compress](https://raw.github.com/emn178/js-md5/master/build/md5.min.js)  
-[Uncompress](https://raw.github.com/emn178/js-md5/master/src/md5.js)
+1. 此仓储脚本仅用于学习研究，不保证其合法性、准确性、有效性，请根据情况自行判断，本人对此不承担任何保证责任。
 
-## Installation
-You can also install js-md5 by using Bower.
+2. 由于此仓储脚本仅用于学习研究，您必须在下载后 24 小时内将所有内容从您的计算机或手机或任何存储设备中完全删除，若违反规定引起任何事件本人对此均不负责。
 
-    bower install md5
+3. 请勿将此仓储脚本用于任何商业或非法目的，若违反规定请自行对此负责。
 
-For node.js, you can use this command to install:
+4. 此仓储脚本涉及应用与本人无关，本人对因此引起的任何隐私泄漏或其他后果不承担任何责任。
 
-    npm install js-md5
+5. 本人对任何脚本引发的问题概不负责，包括但不限于由脚本错误引起的任何损失和损害。
 
-## Notice
-`buffer` method is deprecated. This maybe confuse with Buffer in node.js. Please use `arrayBuffer` instead.
+6. 如果任何单位或个人认为此仓储脚本可能涉嫌侵犯其权利，应及时通知并提供身份证明，所有权证明，我们将在收到认证文件确认后删除此仓储脚本。
 
-## Usage
-You could use like this:
-```JavaScript
-md5('Message to hash');
-var hash = md5.create();
-hash.update('Message to hash');
-hash.hex();
-```
-If you use node.js, you should require the module first:
-```JavaScript
-md5 = require('js-md5');
-```
-It supports AMD:
-```JavaScript
-require(['your/path/md5.js'], function(md5) {
-// ...
-});
-```
-[See document](https://emn178.github.com/js-md5/doc/)
+7. 所有直接或间接使用、查看此仓储脚本的人均应该仔细阅读此声明。本人保留随时更改或补充此声明的权利。一旦您使用或复制了此仓储脚本，即视为您已接受此免责声明。
 
-## Example
-```JavaScript
-md5(''); // d41d8cd98f00b204e9800998ecf8427e
-md5('The quick brown fox jumps over the lazy dog'); // 9e107d9d372bb6826bd81d3542a419d6
-md5('The quick brown fox jumps over the lazy dog.'); // e4d909c290d0fb1ca068ffaddf22cbd0
+### one more thing
 
-// It also supports UTF-8 encoding
-md5('中文'); // a7bac2239fcdcb3a067903d8077c4a07
-
-// It also supports byte `Array`, `Uint8Array`, `ArrayBuffer`
-md5([]); // d41d8cd98f00b204e9800998ecf8427e
-md5(new Uint8Array([])); // d41d8cd98f00b204e9800998ecf8427e
-
-// Different output
-md5(''); // d41d8cd98f00b204e9800998ecf8427e
-md5.hex(''); // d41d8cd98f00b204e9800998ecf8427e
-md5.array(''); // [212, 29, 140, 217, 143, 0, 178, 4, 233, 128, 9, 152, 236, 248, 66, 126]
-md5.digest(''); // [212, 29, 140, 217, 143, 0, 178, 4, 233, 128, 9, 152, 236, 248, 66, 126]
-md5.arrayBuffer(''); // ArrayBuffer
-md5.buffer(''); // ArrayBuffer, deprecated, This maybe confuse with Buffer in node.js. Please use arrayBuffer instead.
-md5.base64(''); // 1B2M2Y8AsgTpgAmY7PhCfg==
-```
-
-## License
-The project is released under the [MIT license](http://www.opensource.org/licenses/MIT).
-
-## Contact
-The project's website is located at https://github.com/emn178/js-md5  
-Author: Chen, Yi-Cyuan (emn178@gmail.com)
+![one-more-thing](https://image.whyour.cn/others/nice.png)
